@@ -11,6 +11,12 @@
   padding-left: 0;
 }*/
 
+.ui-accordion-header-icon {
+  float: left;
+  padding-top: 3px;
+  padding-right: 5px;
+}
+
 .ui-state-hover {
   background-color: #FFFF99;
 }
@@ -40,6 +46,12 @@
 }
 .txt-color-white {
   color: #fff;
+}
+.txt-color-green {
+  color: #356e35;
+}
+.txt-color-red {
+  color: #a90329;
 }
 .panel-heading {
   background-color: #fcfcfc;

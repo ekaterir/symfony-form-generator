@@ -1,8 +1,16 @@
   $(function() {
-    $( "#form-types" ).accordion();
+    var icons = {
+      header: "fa fa-fw fa-plus-circle txt-color-green",
+      activeHeader: "fa fa-fw fa-minus-circle txt-color-red"
+    };
+    $( "#form-types" ).accordion({
+      icons: icons,
+      active: false,
+      collapsible: true,
+      beforeActivate: function( event, ui ) {
+      }
+    });
     $( "#form-types li" ).draggable({
-      //appendTo: "body",
-      //helper: "clone"
 	zIndex: 999,
 	revert: true, // will cause the event to go back to its
 	revertDuration: 0 //  original position after the drag	
@@ -13,14 +21,8 @@
       hoverClass: "ui-state-hover",
       accept: ":not(.ui-sortable-helper)",
       drop: function( event, ui ) {
-	console.log('Event:');
-	console.log(event);
-	console.log('UI:');
-	console.log(ui);
         $( this ).find( ".placeholder" ).remove();
-        //$( "<div></div>" ).text( printHtmlOf(ui.draggable.text()) ).appendTo( this );
 	printHtmlOf(ui.draggable.text().toLowerCase());
-	//alert(ui.draggable.text());
       }
     }).sortable({
       items: "div",
@@ -47,6 +49,29 @@
       				'<input type="checkbox"> Check me out' +
     				'</label>' +
   				'</div>';
+			break;
+		case 'radio':
+			newDiv.innerHTML = '<div class="radio">' +
+  				'<label><input type="radio" name="optradio">Option 1</label>' +
+				'</div>';
+			break;
+		case 'email':
+			newDiv.innerHTML = '<div class="form-group">' +
+    				'<label for="email">Email address:</label>' +
+    				'<input type="email" class="form-control" id="email">' +
+  				'</div>';
+			break;
+		case 'password':
+			newDiv.innerHTML = '<div class="form-group">' +
+    				'<label for="pwd">Password:</label>' +
+    				'<input type="password" class="form-control" id="pwd">' +
+  				'</div>';
+			break;
+		case 'textarea':
+			newDiv.innerHTML = '<div class="form-group">' +
+  				'<label for="comment">Comment:</label>' +
+  				'<textarea class="form-control" rows="5" id="comment"></textarea>' +
+				'</div>';
 			break;
 	}
 	var element = document.getElementById("form-preview");
