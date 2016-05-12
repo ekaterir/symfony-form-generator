@@ -5,10 +5,10 @@
     };
     $( "#form-types" ).accordion({
       icons: icons,
-      active: false,
-      collapsible: true,
-      beforeActivate: function( event, ui ) {
-      }
+  //    active: false,
+  //    collapsible: true,
+  //    beforeActivate: function( event, ui ) {
+  //    }
     });
     $( "#form-types li" ).draggable({
 	zIndex: 999,

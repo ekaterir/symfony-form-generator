@@ -21,11 +21,19 @@
   background-color: #FFFF99;
 }
 
+.form-content {
+  margin-left: 100px;
+}
+
 .canvas { 
   position: relative; 
   border: 1px dashed #ccc; 
   padding: 50px;
   width:100%; 
+}
+
+.nav-tabs > li {
+  float: none !important;
 }
 
 .placeholder {
