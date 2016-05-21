@@ -3,14 +3,17 @@
       header: "fa fa-fw fa-plus-circle txt-color-green",
       activeHeader: "fa fa-fw fa-minus-circle txt-color-red"
     };
+
     $( "#form-types" ).accordion({
       icons: icons,
     });
+
     $( "#form-types li" ).draggable({
 	zIndex: 999,
 	revert: true, // will cause the event to go back to its
 	revertDuration: 0 //  original position after the drag	
     });
+
     $( ".canvas" ).droppable({
       tolerance: "fit",
       activeClass: "ui-state-default",
@@ -19,6 +22,16 @@
       drop: function( event, ui ) {
         $( this ).find( ".placeholder" ).remove();
 	printHtmlOf(ui.draggable.text().toLowerCase());
+	var element = new Element(ui.draggable.text().toLowerCase());
+	if (typeof window.form === 'undefined') {
+		var form = new Form('rand string');
+		form.addElement(element);
+		window.form = form;
+		console.log('made a new form');
+	} else {
+		window.form.addElement(element);
+		console.log(window.form);
+	}	
       }
     }).sortable({
       items: "div",
@@ -28,7 +41,12 @@
         $( this ).removeClass( "ui-state-default" );
       }
     });
+
   });
+
+
+
+
   var printHtmlOf = function (text) {
 	var newDiv = document.createElement('div');
 	newDiv.className = 'form-group';
