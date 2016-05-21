@@ -12,20 +12,33 @@
       <h1>Create Symfony3 Forms</h1>
  	<hr>
         <div class="row">
-          <div class="col-md-8">
-            <h2>Form Preview</h2>
-	<ul class="nav nav-tabs pull-left" id="myTab">
-			  <li class="active"><a data-target="#home" data-toggle="tab">Home</a></li>
-			  <li><a data-target="#profile" data-toggle="tab">PHP</a></li>
-			  <li><a data-target="#messages" data-toggle="tab">Twig</a></li>
-			</ul>
-              <div class="ui-widget-content form-content">
-                <div id="form-preview" class="canvas">
-			<p class="placeholder">Drop Form Elements Here</p>
-		</div>               
-              </div>
-          </div>
-          <div class="col-md-4">
+          <div class="col-md-8 col-sm-9">
+
+
+  <h2>Form Preview</h2>
+    <div class="tabs-left">
+      <ul class="nav nav-tabs tabs-left" role="tablist">
+        <li role="presentation" class="active"><a href="#html" aria-controls="html" role="tab" data-toggle="tab">HTML</a></li>
+        <li role="presentation"><a href="#php" aria-controls="php" role="tab" data-toggle="tab">PHP</a></li>
+        <li role="presentation"><a href="#twig" aria-controls="twig" role="tab" data-toggle="tab">Twig</a></li>
+      </ul>
+    </div>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="html">
+
+        <div class="ui-widget-content form-content">
+          <div id="form-preview" class="canvas">
+	    <p class="placeholder">Drop Form Elements Here</p>
+	  </div>               
+        </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="php">.</div>
+    <div role="tabpanel" class="tab-pane" id="twig">hhh</div>
+  </div>
+        
+</div>
+
+          <div class="col-md-4 col-sm-3">
             <h2>Draggable Form Elements</h2>
 	    <div id="form-types">
 	      <div class="panel-heading">
