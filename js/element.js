@@ -1,48 +1,46 @@
-function Element(name) {
+function Element(type) {
 
-    this.name = name;
+    this.type = type;
+    this.id = Math.floor(Math.random() * 1000000) + '_' + type + '_' + Math.floor(Math.random() * 1000000);
 
 }
 
 
 Element.prototype.getHTML = function() {
 
-    switch(this.name) {
+    switch(this.type) {
         case 'text':
-            return '<div class="form-group">' +
-  		   '<label for="usr">Name:</label>' +
-  		   '<input type="text" class="form-control" id="usr">' +
-		   '</div>';
+            return '<label for="' + this.id + '">New Text Field:</label>' +
+  		   '<input type="text" class="form-control" id="' + this.id + '">';
             break;
+
         case 'checkbox':
-            return '<div class="checkbox">' +
+            return '<div class="checkbox" id="' + this.id + '">' +
 		   '<label>' +
-      		   '<input type="checkbox"> Check me out' +
+      		   '<input type="checkbox"> Checkbox' +
     		   '</label>' +
   		   '</div>';
             break;
+
         case 'radio':
-            return '<div class="radio">' +
+            return '<div class="radio" id="' + this.id + '">' +
   		   '<label><input type="radio" name="optradio">Option 1</label>' +
 		   '</div>';
             break;
+
         case 'email':
-            return '<div class="form-group">' +
-    		   '<label for="email">Email address:</label>' +
-    		   '<input type="email" class="form-control" id="email">' +
-  		   '</div>';
+            return '<label for="' + this.id + '">Email:</label>' +
+    		   '<input type="email" class="form-control" id="' + this.id + '">';
             break;
+
         case 'password':
-            return '<div class="form-group">' +
-    		   '<label for="pwd">Password:</label>' +
-    		   '<input type="password" class="form-control" id="pwd">' +
-  		   '</div>';
+            return '<label for="' + this.id + '">Password:</label>' +
+    		   '<input type="password" class="form-control" id="' + this.id + '">';
             break;
+
         case 'textarea':
-            return '<div class="form-group">' +
-  		   '<label for="comment">Comment:</label>' +
-  		   '<textarea class="form-control" rows="5" id="comment"></textarea>' +
-		   '</div>';
+            return '<label for="' + this.id + '">New Textarea:</label>' +
+  		   '<textarea class="form-control" rows="5" id="' + this.id + '"></textarea>';
             break;
 	}
 
