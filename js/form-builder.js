@@ -1,16 +1,15 @@
   $(function() {
 
-    var icons = {
-      header: "fa fa-fw fa-chevron-circle-right txt-color-green",
-      activeHeader: "fa fa-fw fa-chevron-circle-down txt-color-red"
-    };
-
     $( "#form-types" ).accordion({
-      icons: icons,
+      icons: {
+        header: "fa fa-fw fa-chevron-circle-right txt-color-green",
+        activeHeader: "fa fa-fw fa-chevron-circle-down txt-color-red"
+      },
+      collapsible: true,
     });
 
     $( "#form-types li" ).draggable({
-	zIndex: 999,
+	zIndex: 9999,
 	revert: true, // will cause the event to go back to its
 	revertDuration: 0 //  original position after the drag	
     });
@@ -32,12 +31,19 @@
 	console.log(window.form);
       }
     }).sortable({
-      items: "div",
-      sort: function() {
-        $( this ).removeClass( "ui-state-default" );
-      }
-    });
+	placeholder: 'block-placeholder',
+        items: "div",
+        sort: function() {
+          $( this ).removeClass( "ui-state-default" );
+        },
+	over: function(event, ui) {
+	  console.log('in over');
+	},
+	change: function(event, ui) {
 
+	  console.log('in change');
+	}
+    });
   });
 
 
