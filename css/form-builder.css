@@ -11,6 +11,14 @@
   padding-left: 0;
 }*/
 
+.block-placeholder {
+  height: 50px;
+  border: 1px dotted #ccc;
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: #FFFF99;
+}
+
 .fixed {
   position: fixed;
 }
